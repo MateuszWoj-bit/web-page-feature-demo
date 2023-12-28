@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      #container {
+        position: relative;
+        width: 50%;
+        margin: 50px auto;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        height: 300px; 
+      }
+
+      #scrollingBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-image: url("68a.png");
+        background-size: cover;
+        background-position: 50% 0;
+      }
+
+      .content {
+        min-height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">Additional Content 1</div>
+    <div class="content">Additional Content 2</div>
+    <div id="container">
+      <div id="scrollingBox"></div>
+    </div>
+    <div class="content">Additional Content 3</div>
+    <div class="content">Additional Content 4</div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const scrollingBox = document.getElementById("scrollingBox");
+        const scrollTop = window.scrollY;
+        scrollingBox.style.backgroundPosition = `50% ${-scrollTop}px`;
+      });
+    </script>
+  </body>
+</html>
