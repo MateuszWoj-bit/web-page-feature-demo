@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Cursor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Set the custom cursor image */
+    body {
+      cursor: url('custom-cursor.png') 16 16, auto;
+    }
+
+    /* Define color-changing regions with CSS variables */
+    body:hover {
+      --cursor-color: red;
+    }
+
+    .color-region {
+      background-color: var(--cursor-color);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      pointer-events: none; /* Allow interaction with elements beneath */
+    }
+
+    /* Position color-changing regions */
+    .region1 { top: 0; left: 0; }
+    .region2 { top: 0; right: 0; }
+    .region3 { bottom: 0; left: 0; }
+    .region4 { bottom: 0; right: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- Color-changing regions -->
+  <div class="color-region region1"></div>
+  <div class="color-region region2"></div>
+  <div class="color-region region3"></div>
+  <div class="color-region region4"></div>
+
+  <!-- Your content goes here -->
+
+</body>
+</html>
