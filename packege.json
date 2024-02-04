@@ -1,0 +1,12 @@
+{
+  "name": "web-page-feature-demo",
+  "version": "1.0.0",
+  "description": "A demo repository for showcasing web page features",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
