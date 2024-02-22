@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przykładowy formularz HTML</title>
+  </head>
+  <body>
+    <form action="submit.php" method="post">
+    <input type="text" id="fname" name="fname" placeholder="Imię*" required><br>
+
+    <input type="text" id="lname" name="lname" placeholder="Nazwisko" required><br>
+
+    <input type="email" id="email" name="email" placeholder="Adres e-mail*" required><br>
+
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Numer telefonu"><br>
+
+    <textarea id="message" name="message" rows="4" placeholder="Twoja wiadomość*" required></textarea><br>
+
+    <label for="consent">
+        <input type="checkbox" id="consent" name="consent" required> Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z <a>polityką prywatności</a>
+    </label><br>
+
+    <input type="submit" value="Wyślij">
+</form>
+
+<style>a {
+    color: #333;
+    font-family: Arial, sans-serif;
+    font-style: bold;
+    text-decoration: underline;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    color: #A8A8A8;
+}
+
+textarea {
+    resize: none;
+}
+
+::placeholder {
+    color: #A8A8A8;
+}
+
+label[for="consent"] {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #009879;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + label::before {
+    content: "\2713";
+    font-size: 12px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 16px;
+}
+
+input[type="submit"] {
+    background-color: #009879;
+    color: #FFFFFF;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+</style>
+  </body>
+</html>
