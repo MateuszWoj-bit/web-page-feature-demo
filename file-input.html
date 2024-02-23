@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>start</h1>
+    <main></main>
+    <h2>aftermain</h2> 
+    <footer></footer>
+  </body>
+  <script>
+    // ścieżka pliku
+    const file_path = "https://mateuszwoj-bit.github.io/GOIT-team-project-ice/";
+    // działa dla adresów lokalych jak i http
+
+    const fetchData = (file_path, html_element) => {
+      fetch(file_path)
+        .then((response) => response.text())
+        .then((htmlString) => {
+          const element = document.querySelector(html_element);
+          if (element) {
+            element.innerHTML = htmlString;
+          } else {
+            console.error("wskazany element nie istnieje");
+          }
+        })
+        .catch((error) => console.error("Error loading HTML file:", error));
+    };
+    
+        window.onload = fetchData(file_path, "main");
+  </script>
+</html>
