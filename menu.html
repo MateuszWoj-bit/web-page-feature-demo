@@ -1,172 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rozwijalne Menu</title>
-    <style>
-      /* Style dla menu */
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rozwijalne Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .heading {
+      cursor: pointer;
+      color: #000;
+    }
 
-      ul li {
-        padding: 10px;
-        background-color: #009879;
-        /* border-bottom: 1px solid #ccc; */
-        position: relative;
-        cursor: pointer;
-      }
+    .menu-container {
+      width: 500px;
+      margin: 20px auto;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      color: #fff;
+    }
 
-      ul li:hover {
-        background-color: #99d5c9;
-      }
+    .menu-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
 
-      ul ul {
-        background-color: #fff;
-        /* border-left: 1px solid #ccc; */
-        transition: max-height 0.3s ease-in-out;
-        max-height: 0;
-        overflow: hidden;
-      }
+    .menu-container > ul > li:first-child {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
 
-      ul ul li {
-        padding: 10px;
-        /* border-bottom: 1px solid #ccc; */
-      }
+    .menu-container > ul > li:last-child {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
 
-      ul ul li:last-child {
-        border-bottom: none;
-      }
-    </style>
-  </head>
-  <body>
-    <ul>
-      <li>
-        R1
-        <!-- <ul>
-      <li>Podmenu 1.1</li>
-      <li>Podmenu 1.2</li>
-      <li>Podmenu 1.3</li>
-    </ul> -->
+    .menu-container ul li {
+      width: calc(100% - 40px);
+      padding: 10px 0;
+      background-color: #009879;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .menu-container ul li.submenu-open {
+      padding-bottom: 0;
+    }
+
+    .menu-list-item {
+      position: relative;
+    }
+
+    .submenu-list {
+      text-indent: 0px;
+    }
+
+    .menu-container ul li.hover {
+      background-color: #99d5c9;
+    }
+
+    .menu-container ul ul {
+      background-color: #009879;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    span {
+      width: calc(100% - 10px);
+      padding-left: 10px;
+      display: inline-block;
+    }
+
+    .menu-container ul ul li {
+      padding: 10px 20px;
+    }
+
+    .invisible {
+      display: none;
+    }
+
+    .menu-container > ul {
+      transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+      opacity: 0;
+      max-height: 0;
+    }
+
+    .menu-container > ul.open {
+      opacity: 1;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h2 class="heading">Raporty</h2>
+    <ul class="">
+      <li class="menu-list-item">
+        <span>Ogólna charakterystyka zebranych ogłoszeń o pracę</span>
       </li>
-      <li>
-        R2
-        <ul>
-          <li>R2.1</li>
-          <li>R2.2</li>
+      <li class="menu-list-item">
+        <span>Analiza Portalu A</span>
+        <ul class="submenu-list">
+          <li>Analiza ilościowa ogłoszeń według sektorów ofert pracy</li>
+          <li>Przebiegi czasowe liczby ogłoszeń według sektorów ofert pracy</li>
+          <li>Analiza branżowo-geograficzna</li>
+          <li>Rozkład ogłoszeń w czasie według podkategorii ofert pracy</li>
         </ul>
       </li>
-      <li>
-        R3
-        <ul>
-          <li>R3.1</li>
-          <li>R3.2</li>
+      <li class="menu-list-item">
+        <span>Analiza Portalu B</span>
+        <ul class="submenu-list">
+          <li>Analiza ilościowa ogłoszeń według sektorów ofert pracy</li>
+          <li>Przebiegi czasowe liczby ogłoszeń według sektorów ofert pracy</li>
+          <li>Analiza branżowo-geograficzna</li>
+          <li>Rozkład ogłoszeń w czasie według podkategorii ofert pracy</li>
+          <li>Rozkład ogłoszeń w czasie według branż KZiS</li>
         </ul>
       </li>
-      <li>
-        R4
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Doszacowanie popytu na pracę</span>
       </li>
-      <li>
-        R5
-        <ul>
-          <li>R5.1.1</li>
-          <li>R5.1.2</li>
-          <li>R5.1.3</li>
-          <li>R5.1.4</li>
-          <li>R5.2.1</li>
-          <li>R5.2.2</li>
-          <li>R5.2.3</li>
-          <li>R5.2.4</li>
+      <li class="menu-list-item">
+        <span>Analiza ilościowa bazy ESCO</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza zebranych efektów kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Podsumowanie zgrupowanych efektów kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza mapowania umiejętności ESCO na efekty kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza liczby absolwentów</span>
+        <ul class="submenu-list">
+          <li>Analiza liczby absolwentów szkół branżowych</li>
+          <li>Analiza liczby absolwentów szkół wyższych</li>
         </ul>
       </li>
-      <li>
-        R6
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Analiza umiejętności w ofertach pracy</span>
       </li>
-      <li>
-        R7
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Analiza efektów kształcenia w ofertach pracy</span>
+        <ul class="submenu-list">
+          <li>Ogólna analiza</li>
+          <li>Analiza koszykowa</li>
+          <li>Analiza koszykowa w sektorach</li>
+        </ul>
       </li>
-      <li>
-        R8
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Bieżąca luka i niedopasowanie</span>
+        <ul class="submenu-list">
+          <li>Analiza ogólna</li>
+          <li>Analiza podaży i popytu na zawody i umiejętności</li>
+          <li>Analiza luki z podziałem na województwa</li>
+        </ul>
       </li>
-      <li>
-        R9
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Prognoza umiejętności - przyszła luka</span>
       </li>
-      <li>
-        R10
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
-      </li>
-      <li>
-        R11
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
-      </li>
-      <li>
-        R12
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
-      </li>
-      <li>
-        R13
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
-      </li>
-      <li>
-        R14
-        <!-- <ul>
-          <li>R4.1</li>
-          <li>R4.2</li>
-        </ul> -->
+      <li class="menu-list-item">
+        <span>Zawody przyszłości</span>
+        <ul class="submenu-list">
+          <li>Model Nesta</li>
+        </ul>
       </li>
     </ul>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuItems = document.querySelectorAll("ul > li");
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuItems = document.querySelectorAll(".menu-container ul > li");
+      const menu = document.querySelector(".menu-container ul");
+      const heading = document.querySelector(".heading");
 
-        menuItems.forEach(function (item) {
-          item.addEventListener("click", function () {
-            const submenu = this.querySelector("ul");
-            if (submenu) {
-              if (submenu.style.maxHeight) {
-                submenu.style.maxHeight = null;
-              } else {
-                submenu.style.maxHeight = submenu.scrollHeight + "px";
-              }
+      const appear = () => {
+        menu.classList.toggle("open");
+      };
+
+      heading.addEventListener("click", appear);
+
+      menuItems.forEach(function (item) {
+        let isSubMenuOpen = false;
+
+        item.addEventListener("mouseenter", function (event) {
+          if (!isSubMenuOpen) {
+            item.classList.add("hover");
+          }
+        });
+
+        item.addEventListener("mouseleave", function (event) {
+          if (!isSubMenuOpen) {
+            item.classList.remove("hover");
+          }
+        });
+
+        item.addEventListener("click", function (event) {
+          const submenu = this.querySelector("ul");
+          event.stopPropagation();
+          if (submenu) {
+            if (submenu.style.maxHeight) {
+              submenu.style.maxHeight = null;
+              isSubMenuOpen = false;
+              item.classList.remove("submenu-open");
+            } else {
+              submenu.style.maxHeight = submenu.scrollHeight + "px";
+              isSubMenuOpen = true;
+              item.classList.add("submenu-open");
+            }
+          }
+        });
+
+        const submenu = item.querySelector("ul");
+        if (submenu) {
+          submenu.addEventListener("mouseenter", function () {
+            isSubMenuOpen = true;
+            item.classList.remove("hover");
+          });
+          submenu.addEventListener("mouseleave", function () {
+            isSubMenuOpen = false;
+            item.classList.add("hover");
+          });
+        }
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!event.target.closest(".menu-container")) {
+          menuItems.forEach(function (item) {
+            const submenu = item.querySelector("ul");
+            if (submenu && submenu.style.maxHeight) {
+              submenu.style.maxHeight = null;
+              isSubMenuOpen = false;
+              item.classList.remove("submenu-open");
             }
           });
-        });
+          menu.classList.remove("open");
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
 </html>
