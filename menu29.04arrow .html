@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rozwijalne Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titan+One&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    .heading {
+      cursor: pointer;
+      color: #000;
+      position: relative;
+    }
+
+    .menu-container {
+      width: 500px;
+      margin: 20px auto;
+      font-family: "Montserrat", sans-serif;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .menu-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .menu-container > ul > li:first-child {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .menu-container > ul > li:last-child {
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .menu-container ul li {
+      width: calc(100% - 40px);
+      padding: 10px 0;
+      background-color: #009879;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .menu-container ul li.submenu-open {
+      padding-bottom: 0;
+    }
+
+    .menu-list-item {
+      position: relative;
+    }
+
+    .submenu-list {
+      text-indent: 0px;
+    }
+
+    .menu-container ul li.hover {
+      background-color: #99d5c9;
+    }
+
+    .menu-container ul ul {
+      background-color: #009879;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+
+    span {
+      width: calc(100% - 10px);
+      padding-left: 10px;
+      display: inline-block;
+    }
+
+    .menu-container ul ul li {
+      padding: 10px 30px;
+    }
+
+    .invisible {
+      display: none;
+    }
+
+    .menu-container > ul {
+      transition: opacity 0.4s ease-in-out, visibility 0s linear 0.4s;
+      opacity: 0;
+      max-height: 0;
+    }
+
+    .menu-container > ul.open {
+      opacity: 1;
+      max-height: 100%;
+    }
+    .svg_position--white{
+      position: absolute;
+      top: 2.5px;
+
+    }
+      .svg_position--black{
+      position: absolute;
+      top: -2px;
+
+    }
+
+    .main__list{
+      padding: 15px;
+    }
+
+    .last-item{
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .rotate {
+  transform: rotate(180deg); /* Adjust the degree as needed */
+  transition: transform 0.3s ease; /* Add transition for smooth rotation */
+}
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h2 class="heading">Raporty<svg class="svg_position--black" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></h2>
+    <ul class="main__list">
+      <li class="menu-list-item">
+        <span>Ogólna charakterystyka zebranych ogłoszeń o pracę</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza Portalu A <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list">
+          <li>Analiza ilościowa ogłoszeń według sektorów ofert pracy</li>
+          <li>Przebiegi czasowe liczby ogłoszeń według sektorów ofert pracy</li>
+          <li>Analiza branżowo-geograficzna</li>
+          <li>Rozkład ogłoszeń w czasie według podkategorii ofert pracy</li>
+        </ul>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza Portalu B <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list">
+          <li>Analiza ilościowa ogłoszeń według sektorów ofert pracy</li>
+          <li>Przebiegi czasowe liczby ogłoszeń według sektorów ofert pracy</li>
+          <li>Analiza branżowo-geograficzna</li>
+          <li>Rozkład ogłoszeń w czasie według podkategorii ofert pracy</li>
+          <li>Rozkład ogłoszeń w czasie według branż KZiS</li>
+        </ul>
+      </li>
+      <li class="menu-list-item">
+        <span>Doszacowanie popytu na pracę</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza ilościowa bazy ESCO</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza zebranych efektów kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Podsumowanie zgrupowanych efektów kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza mapowania umiejętności ESCO na efekty kształcenia</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza liczby absolwentów <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list">
+          <li>Analiza liczby absolwentów szkół branżowych</li>
+          <li>Analiza liczby absolwentów szkół wyższych</li>
+        </ul>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza umiejętności w ofertach pracy</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Analiza efektów kształcenia w ofertach pracy <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list">
+          <li>Ogólna analiza</li>
+          <li>Analiza koszykowa</li>
+          <li>Analiza koszykowa w sektorach</li>
+        </ul>
+      </li>
+      <li class="menu-list-item">
+        <span>Bieżąca luka i niedopasowanie <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list">
+          <li>Analiza ogólna</li>
+          <li>Analiza podaży i popytu na zawody i umiejętności</li>
+          <li>Analiza luki z podziałem na województwa</li>
+        </ul>
+      </li>
+      <li class="menu-list-item">
+        <span>Prognoza umiejętności - przyszła luka</span>
+      </li>
+      <li class="menu-list-item">
+        <span>Zawody przyszłości <svg class="svg_position--white" width="36px" height="36px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+      <rect x="0" fill="none" width="24" height="24"/>
+      
+      <g>
+      
+      <path fill="#fff" d="M7 10l5 5 5-5"/>
+      
+      </g>
+      
+      </svg></span>
+        <ul class="submenu-list last-item">
+          <li>Model Nesta</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".menu-container ul > li");
+  const menu = document.querySelector(".menu-container ul");
+  const heading = document.querySelector(".heading");
+
+  const appear = () => {
+    menu.classList.toggle("open");
+  };
+
+  heading.addEventListener("click", appear);
+
+  menuItems.forEach(function (item) {
+    let isSubMenuOpen = false;
+
+    item.addEventListener("mouseenter", function (event) {
+      if (!isSubMenuOpen) {
+        item.classList.add("hover");
+      }
+    });
+
+    item.addEventListener("mouseleave", function (event) {
+      
+        item.classList.remove("hover");
+      
+    });
+
+    item.addEventListener("click", function (event) {
+      const submenu = this.querySelector("ul");
+      event.stopPropagation();
+      if (submenu) {
+        if (submenu.style.maxHeight) {
+          submenu.style.maxHeight = null;
+          isSubMenuOpen = false;
+          item.classList.remove("submenu-open");
+          submenu.parentNode.querySelector(".svg_position--white").style.transform = "rotate(0deg)"; // Reset rotation
+        } else {
+          submenu.style.maxHeight = submenu.scrollHeight + "px";
+          isSubMenuOpen = true;
+          item.classList.add("submenu-open");
+          submenu.parentNode.querySelector(".svg_position--white").style.transform = "rotate(180deg)"; // Apply rotation
+        }
+      }
+    });
+
+    const submenu = item.querySelector("ul");
+    if (submenu) {
+      submenu.addEventListener("mouseenter", function () {
+        isSubMenuOpen = true;
+        item.classList.remove("hover");
+      });
+      submenu.addEventListener("mouseleave", function () {
+        isSubMenuOpen = false;
+        item.classList.add("hover");
+      });
+    }
+  });
+
+ document.addEventListener("click", function (event) {
+    if (!event.target.closest(".menu-container")) {
+      menuItems.forEach(function (item) {
+        const submenu = item.querySelector("ul");
+        if (submenu && submenu.style.maxHeight) {
+          submenu.style.maxHeight = null;
+          isSubMenuOpen = false;
+          item.classList.remove("submenu-open");
+          item.classList.remove("hover");
+          const svgs = item.querySelectorAll(".svg_position--white");
+          svgs.forEach(function(svg) {
+            svg.style.transform = "rotate(0deg)"; // Reset rotation for each SVG
+          });
+        }
+      });
+      menu.classList.remove("open");
+    }
+  });
+});
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

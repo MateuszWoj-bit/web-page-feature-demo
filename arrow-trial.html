@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated SVG</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+     
+    </style>
+  </head>
+  <body>
+    <span id="svg-container">
+      <div class="target" >
+        <svg class="svg__rotate"
+          class="svg_position--white"
+          width="36px"
+          height="36px"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect x="0" fill="none" width="24" height="24" />
+          <g>
+            <path id="arrow" fill="#000" d="M7 10l5 5 5-5" />
+          </g>
+        </svg>
+      </div>
+    </span>
+
+    <script>
+      const svg = document.getElementById("svg-container");
+      const arrow = document.querySelector(".svg__rotate");
+       const target = document.querySelector(".target");
+      let rotator = false;
+      console.log(svg);
+      console.log(arrow);
+
+      target.addEventListener("click", () => {
+        console.log(rotator);
+        rotator = !rotator;
+        console.log(rotator);
+        arrow.style.transition = "transform 0.3s ease";
+        arrow.style.transform = rotator ? "rotate(180deg)" : "rotate(0deg)";
+      });
+    </script>
+  </body>
+</html>
