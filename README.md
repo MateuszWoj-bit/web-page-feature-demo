@@ -2,4 +2,4 @@ Notes:
 
 Stream files - Node.JS
 
-CS + JS webpage features
+CS + JS webpage feature
